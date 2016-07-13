@@ -1,17 +1,18 @@
-const queu = require('quek')()
+const quek = require('quek')()
 
 module.exports = () => {
   const seqr = {}
 
   seqr.then = (fn) => {
     if (fn) {
-      queu.enqueue({
+      quek.enqueue({
         fn,
         lock: false
       })
     }
 
-    next(queu.peek())
+    next(quek.peek())
+
     return seqr
   }
 
@@ -25,11 +26,11 @@ module.exports = () => {
   }
 
   function done () {
-    const el = queu.peek()
+    const el = quek.peek()
 
     if (el && el.lock) {
-      queu.dequeue()
-      next(queu.peek())
+      quek.dequeue()
+      next(quek.peek())
     }
   }
 }

@@ -1,8 +1,8 @@
 const test = require('tape')
 const seqr = require('./')()
 
-test('Test Suite', function (t) {
-  t.plan(3)
+test('Test Suite', t => {
+  t.plan(4)
 
   seqr
     .then(done => {
@@ -19,7 +19,14 @@ test('Test Suite', function (t) {
     })
 
   seqr.then(done => {
-    t.ok(1, 'Seq 3 is done.')
+    setTimeout(() => {
+      t.ok(1, 'Seq 3 is done.')
+      done()
+    }, 1500)
+  })
+
+  seqr.then(done => {
+    t.ok(1, 'Seq 4 is done.')
     done()
   })
 })
