@@ -3,8 +3,8 @@ const quek = require('quek')()
 module.exports = () => {
   const seqr = {}
 
-  seqr.then = (fn) => {
-    if (fn) {
+  seqr.then = fn => {
+    if (fn && typeof fn === 'function') {
       quek.enqueue({
         fn,
         lock: false
