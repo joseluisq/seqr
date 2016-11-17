@@ -13,7 +13,7 @@ npm install seqr --save-dev
 #### AMD
 
 ```js
-requirejs(['/your-path/seqr'], Seqr => {
+requirejs(['seqr'], Seqr => {
 
 })
 ```
