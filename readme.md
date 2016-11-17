@@ -4,8 +4,24 @@
 
 ## Install
 
+#### CommonJS
+
 ```sh
-$ npm install seqr --save-dev
+npm install seqr --save-dev
+```
+
+#### AMD
+
+```js
+requirejs(['/your-path/seqr'], Seqr => {
+
+})
+```
+
+#### Browser
+
+```sh
+bower install seqr --save
 ```
 
 ## Usage
