@@ -1,36 +1,32 @@
 /*! seqr v1.0.3 | MIT (c) 2016 José Luis Quintana */
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['quek'], function (quek) {
-      return root.Seqr = factory(quek());
-    });
-  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
-    // Node. Does not work with strict CommonJS, but
-    // only CommonJS-like environments that support module.exports,
-    // like Node.
-    module.exports = factory(require('quek')());
+(function (global, factory) {
+  if (typeof define === "function" && define.amd) {
+    define('Seqr', ['module', 'quek'], factory);
+  } else if (typeof exports !== "undefined") {
+    factory(module, require('quek'));
   } else {
-    // Browser globals
-    root.Seqr = factory(root.Quek());
+    var mod = {
+      exports: {}
+    };
+    factory(mod, global.Quek);
+    global.Seqr = mod.exports;
   }
-})(undefined, function (quek) {
-  return function () {
+})(this, function (module, Quek) {
+  'use strict';
+
+  module.exports = function () {
     var api = {};
+    var quek = Quek();
 
     api.then = function (fn) {
       if (fn && typeof fn === 'function') {
-        quek.enqueue({
+        quek.append({
           fn: fn,
           lock: false
         });
       }
 
-      next(quek.peek());
+      next(quek.first());
 
       return api;
     };
@@ -45,11 +41,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     }
 
     function done() {
-      var el = quek.peek();
+      var el = quek.first();
 
       if (el && el.lock) {
-        quek.dequeue();
-        next(quek.peek());
+        quek.shift();
+        next(quek.first());
       }
     }
   };
