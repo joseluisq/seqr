@@ -1,7 +1,10 @@
+/seqr.js
+!src
 node_modules
 bower_components
-lib
+coverage
 log
+.tmp
 *#
 *~
 *.log

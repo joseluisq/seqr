@@ -1,8 +1,10 @@
-const Quek = require('quek')
+/* global module */
+
+import Quek from 'quek'
 
 module.exports = () => {
-  const api = {}
   const quek = Quek()
+  const api = {}
 
   api.then = fn => {
     if (fn && typeof fn === 'function') {
