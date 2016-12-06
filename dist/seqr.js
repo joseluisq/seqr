@@ -67,6 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var api = {};
 
 	  api.then = function (fn) {
+	    /* istanbul ignore else */
 	    if (fn && typeof fn === 'function') {
 	      quek.append({
 	        fn: fn,
@@ -88,6 +89,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 
+	  /* istanbul ignore next */
 	  function done() {
 	    var el = quek.first();
 

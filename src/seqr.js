@@ -7,6 +7,7 @@ module.exports = () => {
   const api = {}
 
   api.then = fn => {
+    /* istanbul ignore else */
     if (fn && typeof fn === 'function') {
       quek.append({
         fn,
@@ -28,6 +29,7 @@ module.exports = () => {
     }
   }
 
+  /* istanbul ignore next */
   function done () {
     const el = quek.first()
 

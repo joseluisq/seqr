@@ -20,9 +20,19 @@ requirejs(['seqr'], Seqr => {
 
 #### Browser
 
+#### Bower
 ```sh
 bower install seqr --save
 ```
+
+##### CDN
+[UMD](https://github.com/umdjs/umd/) file is also available on [unpkg](https://unpkg.com):
+
+```html
+<script src="https://unpkg.com/seqr/dist/seqr.min.js"></script>
+```
+
+You can use the library via `window.Seqr`.
 
 ## Usage
 
