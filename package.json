@@ -1,6 +1,6 @@
 {
   "name": "seqr",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A small ES6 package for execute functions sequentially.",
   "repository": "joseluisq/seqr",
   "license": "MIT",
