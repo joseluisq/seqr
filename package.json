@@ -52,7 +52,7 @@
     "jest-cli": "^19.0.0",
     "pretty-bytes": "^4.0.2",
     "readline-sync": "^1.4.5",
-    "webpack": "^1.13.3",
+    "webpack": "^2.3.0",
     "webpack-dev-server": "^1.16.2"
   },
   "babel": {
