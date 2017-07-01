@@ -7,6 +7,7 @@ node_js:
   - '5'
   - '6'
   - '7'
+  - '8'
 
 git:
   depth: 1
@@ -14,9 +15,15 @@ git:
 branches:
   only:
   - master
-  - /^greenkeeper-/
+  - /^greenkeeper/.*$/
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
 notifications:
   email: false
 
-after_success: npm run coverage
+after_success:
+  - yarn coverage

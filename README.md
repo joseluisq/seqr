@@ -1,38 +1,28 @@
-# seqr [![Build Status](https://travis-ci.org/joseluisq/seqr.svg?branch=master)](https://travis-ci.org/joseluisq/seqr) [![Coverage Status](https://coveralls.io/repos/github/joseluisq/seqr/badge.svg?branch=master&v1)](https://coveralls.io/github/joseluisq/seqr?branch=master) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+# Seqr [![Build Status](https://travis-ci.org/joseluisq/seqr.svg?branch=master)](https://travis-ci.org/joseluisq/seqr) [![Coverage Status](https://coveralls.io/repos/github/joseluisq/seqr/badge.svg?branch=master&v1)](https://coveralls.io/github/joseluisq/seqr?branch=master) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 > A small [ES6](https://babeljs.io/docs/learn-es2015/) package for execute functions sequentially.
 
 ## Install
 
-#### CommonJS
+[Yarn](https://github.com/yarnpkg/)
+
+```sh
+yarn add seqr --dev
+```
+
+[NPM](https://www.npmjs.com/)
 
 ```sh
 npm install seqr --save-dev
 ```
 
-#### AMD
-
-```js
-requirejs(['seqr'], Seqr => {
-
-})
-```
-
-#### Browser
-
-#### Bower
-```sh
-bower install seqr --save
-```
-
-##### CDN
 [UMD](https://github.com/umdjs/umd/) file is also available on [unpkg](https://unpkg.com):
 
 ```html
 <script src="https://unpkg.com/seqr/dist/seqr.min.js"></script>
 ```
 
-You can use the library via `window.Seqr`.
+You can use the library via `window.seqr`.
 
 ## Usage
 
@@ -70,4 +60,4 @@ seqr.then(done => {
 ## License
 MIT license
 
-© 2016 [José Luis Quintana](http://git.io/joseluisq)
+© 2017 [José Luis Quintana](http://git.io/joseluisq)

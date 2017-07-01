@@ -1,21 +1,18 @@
-/* global module */
+import quesk from 'quesk'
 
-import Quek from 'quek'
-
-module.exports = () => {
-  const quek = Quek()
+export default function seqr () {
+  const queue = quesk()
   const api = {}
 
   api.then = fn => {
-    /* istanbul ignore else */
     if (fn && typeof fn === 'function') {
-      quek.append({
+      queue.append({
         fn,
         lock: false
       })
     }
 
-    next(quek.first())
+    next(queue.first())
 
     return api
   }
@@ -29,13 +26,12 @@ module.exports = () => {
     }
   }
 
-  /* istanbul ignore next */
   function done () {
-    const el = quek.first()
+    const el = queue.first()
 
     if (el && el.lock) {
-      quek.shift()
-      next(quek.first())
+      queue.shift()
+      next(queue.first())
     }
   }
 }
