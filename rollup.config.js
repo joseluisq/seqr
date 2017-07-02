@@ -22,7 +22,7 @@ if (env === 'minified') {
 
 if (env === 'unminified') {
   targets.push({ dest: `dist/${pkg.name}.js`, format: 'cjs' })
-  external.push('emitus')
+  external.push('quesk')
 }
 
 export default {
